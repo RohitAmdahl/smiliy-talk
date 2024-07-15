@@ -1,10 +1,13 @@
-import Image from "next/image";
-import Signup from "./components/signup/Signup";
-
+import { Button } from "@/components/ui/button";
+import Signup from "@/components/signup/Signup";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="">
       <Signup />
-    </main>
+      <div>
+        <h1>shadcn/ui</h1>
+        <Button size="lg">Click me</Button>
+      </div>
+    </div>
   );
 }
