@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
 import "./globals.css";
 import { Bebas_Neue as BebasNeue } from "next/font/google";
+import { Providers } from "@/components/theme/providers";
+import Navbar from "@/components/header/Navbar";
 
 const bebasNeue = BebasNeue({
   weight: "400",
@@ -24,7 +26,10 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" type="image.png" />
       </head>
       <body className={bebasNeue.className}>
-        <main>{children}</main>
+        <Providers>
+          <Navbar />
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );
