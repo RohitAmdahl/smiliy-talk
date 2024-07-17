@@ -2,9 +2,18 @@
 
 import { FiSun, FiMoon } from "react-icons/fi";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { RiseLoader } from "react-spinners";
 
 export default function ThemeSwitch() {
   const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) {
+    return <RiseLoader color="rgba(128, 109, 109, 1)" />;
+  }
 
   if (resolvedTheme === "dark") {
     return (
