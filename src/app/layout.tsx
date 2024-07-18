@@ -4,6 +4,7 @@ import "./globals.css";
 import { Bebas_Neue as BebasNeue } from "next/font/google";
 import { Providers } from "@/components/theme/providers";
 import Navbar from "@/components/header/Navbar";
+import Footer from "@/components/footer/Footer";
 
 const bebasNeue = BebasNeue({
   weight: "400",
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <main>{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
