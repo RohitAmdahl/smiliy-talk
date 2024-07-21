@@ -1,8 +1,9 @@
-import UserSignup from "@/components/form/UserSignup";
+import Signup from "@/components/form/SignUp";
+
 export default function Home() {
   return (
-    <div className="">
-      <UserSignup />
+    <div className="max-w-7xl mx-auto container">
+      <Signup />
     </div>
   );
 }
