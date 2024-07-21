@@ -28,9 +28,13 @@ export default function RootLayout({
       </head>
       <body className={bebasNeue.className}>
         <Providers>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow flex items-center justify-center">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>
