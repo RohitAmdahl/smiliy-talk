@@ -40,7 +40,7 @@ const Signup = () => {
   };
 
   return (
-    <div className=" w-full max-w-md mx-auto container font-sans">
+    <div className=" w-full max-w-md mx-auto container font-sans px-8 py-8 border-2 ">
       <FormProvider {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
