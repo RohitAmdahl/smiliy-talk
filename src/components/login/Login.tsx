@@ -88,10 +88,10 @@ const Login = () => {
         <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-slate-300 after:ml-4 after:block after:h-px after:flex-grow after:bg-slate-300">
           or
         </div>
-        <div className="">
+        <div>
           <p className="flex gap-4 justify-center items-center">
-            Don't have an account?
-            <Link className="font-bold text-xl hover:underline" href={"/"}>
+            Don&apos;t have an account?
+            <Link className="font-bold text-xl hover:underline" href="/">
               Sign Up
             </Link>
           </p>

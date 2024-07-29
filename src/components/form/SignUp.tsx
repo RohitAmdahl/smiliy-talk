@@ -42,7 +42,7 @@ const Signup = () => {
   return (
     <div>
       <div>
-        <h1 className="text-3xl  text-center ">
+        <h1 className="text-3xl text-center">
           Get started with Smiliy-Talk account
         </h1>
         <p className="text-center font-serif p-4">
@@ -101,20 +101,17 @@ const Signup = () => {
             <Button className="w-full" variant="default" type="submit">
               Sign-in
             </Button>
-            <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-slate-300 after:ml-4 after:block after:h-px after:flex-grow after:bg-slate-300">
-              or
-            </div>
-            <p className="flex gap-3 justify-center items-center">
-              Already have an account?
-              <Link
-                className="font-bold text-xl hover:underline"
-                href="/log-in"
-              >
-                Login
-              </Link>
-            </p>
           </form>
         </FormProvider>
+        <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-slate-300 after:ml-4 after:block after:h-px after:flex-grow after:bg-slate-300">
+          or
+        </div>
+        <p className="flex gap-3 justify-center items-center">
+          Already have an account?
+          <Link className="font-bold text-xl hover:underline" href="/log-in">
+            Login
+          </Link>
+        </p>
       </div>
     </div>
   );
