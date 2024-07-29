@@ -40,7 +40,7 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div className="mt-8">
       <div>
         <h1 className="text-3xl text-center">
           Get started with Smiliy-Talk account
