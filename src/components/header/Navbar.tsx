@@ -1,8 +1,6 @@
 import Image from "next/image";
 import ThemeSwitch from "../theme/ThemeSwitch";
-import { Button } from "../ui/button";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const Navbar = () => {
   return (
