@@ -91,7 +91,7 @@ const Login = () => {
         <div>
           <p className="flex gap-4 justify-center items-center">
             Don&apos;t have an account?
-            <Link className="font-bold text-xl hover:underline" href="/">
+            <Link className="font-bold text-xl hover:underline" href="/sign-up">
               Sign Up
             </Link>
           </p>
