@@ -4,7 +4,7 @@ import giffile from "../../public/smiliy.gif";
 export default function Home() {
   return (
     <div className="max-w-7xl mx-auto container">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 items-center">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 items-center">
         <div>
           <h1 className="text-lg md:text-xl lg:text-4xl font-bold">
             Say Hello to Interactive Conversations with Smiliy-Talk!
@@ -24,7 +24,7 @@ export default function Home() {
               alt="smiliy"
               width={500}
               height={500}
-              className="rounded-lg"
+              className="rounded-xl"
             />
           </div>
         </div>
