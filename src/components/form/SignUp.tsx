@@ -42,14 +42,14 @@ const Signup = () => {
   return (
     <div className="mt-8">
       <div>
-        <h1 className="text-3xl text-center">
+        <h1 className="text-4xl text-center">
           Get started with Smiliy-Talk account
         </h1>
         <p className="text-center font-serif p-4">
           Sign up for free to get started
         </p>
       </div>
-      <div className=" w-full max-w-md mx-auto container font-sans px-8 py-8 border-2 ">
+      <div className=" w-full max-w-xl mx-auto container font-sans px-8 py-8 border-2 ">
         <FormProvider {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -99,7 +99,7 @@ const Signup = () => {
               )}
             />
             <Button className="w-full" variant="default" type="submit">
-              Sign-in
+              Sign-Up
             </Button>
           </form>
         </FormProvider>
