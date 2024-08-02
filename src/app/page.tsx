@@ -6,7 +6,7 @@ export default function Home() {
     <div className="max-w-7xl mx-auto container">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 items-center">
         <div>
-          <h1 className="text-lg md:text-xl lg:text-4xl font-bold">
+          <h1 className="text-lg md:text-xl lg:text-4xl font-bold  text-gray-400">
             Say Hello to Interactive Conversations with Smiliy-Talk!
           </h1>
           <p className="text-lg font-serif p-6">
