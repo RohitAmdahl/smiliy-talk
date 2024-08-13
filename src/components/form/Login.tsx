@@ -13,16 +13,15 @@ import * as z from "zod";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+import OauthButton from "./OauthButton";
 
 const FormSchema = z.object({
   email: z
     .string()
     .min(2, {
-      message: "email is required.",
+      message: "Email is required.",
     })
-    .email(" Invalid email."),
+    .email("Invalid email."),
   password: z
     .string()
     .min(2, "Password is required.")
@@ -41,12 +40,12 @@ const Login = () => {
   return (
     <div>
       <div>
-        <h1 className="text-3xl  text-center ">Log in</h1>
-        <p className="text-center font-serif p-4 ">
+        <h1 className="text-3xl text-center">Log in</h1>
+        <p className="text-center font-serif p-4">
           Login to get started, please enter your credentials
         </p>
       </div>
-      <div className=" w-full max-w-md mx-auto container font-sans px-8 py-8 border-2 ">
+      <div className="w-full max-w-md mx-auto container font-sans px-8 py-8 border-2">
         <FormProvider {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -90,30 +89,7 @@ const Login = () => {
         <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-slate-300 after:ml-4 after:block after:h-px after:flex-grow after:bg-slate-300">
           or
         </div>
-        <form className="pb-4">
-          <div className="flex justify-center items-center gap-4 ">
-            <Button
-              className="w-full flex gap-3"
-              variant="default"
-              type="submit"
-              value="google"
-              name="action"
-            >
-              <FcGoogle size={25} />
-              Login with Google
-            </Button>
-            <Button
-              className="w-full flex gap-3"
-              variant="default"
-              type="submit"
-              value="github"
-              name="action"
-            >
-              <FaGithub size={25} />
-              Login with Github
-            </Button>
-          </div>
-        </form>
+        <OauthButton />
         <div>
           <p className="flex gap-4 justify-center items-center">
             Don&apos;t have an account?
