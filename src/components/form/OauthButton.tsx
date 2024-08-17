@@ -8,7 +8,7 @@ import { FaGithub } from "react-icons/fa";
 const OauthButton = () => {
   // Handler for OAuth login
   const handleLogin = (provider: string) => {
-    signIn(provider, { callbackUrl: "/dashboard" }); // Redirect to dashboard after login
+    signIn(provider, { callbackUrl: "/dashbord" }); // Redirect to dashboard after login
   };
 
   return (
