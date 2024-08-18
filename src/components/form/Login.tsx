@@ -158,14 +158,21 @@ const Login = () => {
         </div>
 
         <div className="space-y-4">
-          <Button formAction={login} type="submit" className="w-full">
+          <Button
+            formAction={login}
+            type="submit"
+            className="w-full text-lg tracking-wider"
+          >
             Login
           </Button>
+          <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-slate-300 after:ml-4 after:block after:h-px after:flex-grow after:bg-slate-300">
+            or
+          </div>
           <Button
             formAction={signup}
             type="submit"
             variant="secondary"
-            className="w-full"
+            className="w-full text-lg tracking-wider"
           >
             Signup
           </Button>
