@@ -25,7 +25,7 @@ const Navbar = () => {
             <ThemeSwitch />
             <div>
               <Link
-                href="/log-in"
+                href="/login"
                 className="bg-primary tracking-wider text-lg text-primary-foreground px-6 py-2 rounded-md hover:bg-primary/90"
               >
                 Login

@@ -1,9 +1,16 @@
 import React from "react";
+import { redirect } from "next/navigation";
+import { createClient } from "../../../utils/supabase/server";
+const DashboardLayout = async () => {
+  const supabase = createClient();
 
-const DashboardLayout = () => {
+  const { data, error } = await supabase.auth.getUser();
+  if (error || !data?.user) {
+    redirect("/login");
+  }
   return (
     <div>
-      <h1 className="text-3xl">DashboardLayout</h1>
+      return <p>Hello {data.user.email}</p>
     </div>
   );
 };

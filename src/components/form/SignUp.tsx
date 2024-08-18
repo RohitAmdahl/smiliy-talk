@@ -1,4 +1,4 @@
-"use client";
+"use server";
 import { useForm, FormProvider } from "react-hook-form";
 import {
   FormControl,
@@ -12,7 +12,7 @@ import * as z from "zod";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
+import { signup } from "@/app/login/actions";
 const FormSchema = z.object({
   username: z.string().min(2, {
     message: "Username must be at least 2 characters.",
@@ -97,7 +97,12 @@ const Signup = () => {
                 </FormItem>
               )}
             />
-            <Button className="w-full" variant="default" type="submit">
+            <Button
+              formAction={signup}
+              className="w-full"
+              variant="default"
+              type="submit"
+            >
               Sign-Up
             </Button>
           </form>

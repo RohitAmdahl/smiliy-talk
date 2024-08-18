@@ -1,7 +1,7 @@
-"use client";
+"use server";
 
-import { useForm, FormProvider } from "react-hook-form";
 import {
+  Form,
   FormControl,
   FormField,
   FormItem,
@@ -14,6 +14,8 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import OauthButton from "./OauthButton";
+import { login, signup } from "@/app/login/actions";
+import { useForm, FormProvider } from "react-hook-form";
 
 const FormSchema = z.object({
   email: z
@@ -32,6 +34,7 @@ const Login = () => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
+  console.log(Form);
 
   const onSubmit = () => {
     console.log("form", form.getValues());
@@ -81,7 +84,12 @@ const Login = () => {
                 </FormItem>
               )}
             />
-            <Button className="w-full" variant="default" type="submit">
+            <Button
+              formAction={login}
+              className="w-full"
+              variant="default"
+              type="submit"
+            >
               Login
             </Button>
           </form>
