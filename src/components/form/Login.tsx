@@ -4,30 +4,17 @@ import { login, signup } from "@/app/login/actions";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-const signUp = () => {
+const Login = () => {
   return (
-    <div className="max-w-2xl mx-auto p-8 border rounded-lg shadow-md ">
+    <div className="max-w-2xl mx-auto p-8 border rounded-lg shadow-md">
       <div>
-        <h1 className="text-3xl text-center ">Sign Up</h1>
+        <h1 className="text-3xl text-center">Log in</h1>
 
         <p className="text-center font-serif p-4">
-          Sign up to get started, please enter your credentials
+          Login to get started, please enter your credentials
         </p>
       </div>
       <form className="space-y-6 font-sans">
-        <div>
-          <label htmlFor="name" className=" text-lg">
-            Name:
-          </label>
-          <Input
-            id="email"
-            name="name"
-            type="name"
-            required
-            placeholder="Enter your name"
-            className="mt-1 block w-full"
-          />
-        </div>
         <div>
           <label htmlFor="email" className="block text-lg">
             Email:
@@ -53,30 +40,41 @@ const signUp = () => {
             required
             placeholder="Enter your password"
             className="mt-1 block w-full"
-            pattern=""
           />
         </div>
 
         <div className="space-y-4">
-          {/* <Button
+          <Button
             formAction={login}
             type="submit"
             className="w-full text-lg tracking-wider"
           >
             Login
-          </Button> */}
+          </Button>
+          <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-slate-300 after:ml-4 after:block after:h-px after:flex-grow after:bg-slate-300">
+            or
+          </div>
+          <div className="text-center ">
+            <a href="/signup">
+              Do not have an account?
+              <span className="underline hover:text-lg font-semibold px-3">
+                Sign UP
+              </span>
+            </a>
+          </div>
 
-          <Button
+          {/* <Button
             formAction={signup}
             type="submit"
+            variant="secondary"
             className="w-full text-lg tracking-wider"
           >
             Signup
-          </Button>
+          </Button> */}
         </div>
       </form>
     </div>
   );
 };
 
-export default signUp;
+export default Login;
