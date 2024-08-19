@@ -1,124 +1,82 @@
 "use server";
-import { useForm, FormProvider } from "react-hook-form";
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../ui/form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import Link from "next/link";
-import { signup } from "@/app/login/actions";
-const FormSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  email: z
-    .string()
-    .min(2, {
-      message: "email is required.",
-    })
-    .email(" Invalid email."),
-  password: z
-    .string()
-    .min(2, "Password is required.")
-    .max(8, "Password must be less than 8 characters."),
-});
 
-const Signup = () => {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-  });
+import { login, signup } from "@/app/login/actions";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
-  const onSubmit = () => {
-    console.log("form", form.getValues());
-  };
-
+const signUp = () => {
   return (
-    <div className="mt-8">
+    <div className="max-w-2xl mx-auto p-8 border rounded-lg shadow-md ">
       <div>
-        <h1 className="text-4xl text-center">
-          Get started with Smiliy-Talk account
-        </h1>
+        <h1 className="text-3xl text-center ">Sign Up</h1>
+
         <p className="text-center font-serif p-4">
-          Sign up for free to get started
+          Sign up to get started, please enter your credentials
         </p>
       </div>
-      <div className=" w-full max-w-xl mx-auto container font-sans px-8 py-8 border-2 ">
-        <FormProvider {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="w-full space-y-6"
-          >
-            <FormField
-              control={form.control}
-              name="username"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Username</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter your username" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter your email" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="password"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Password</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="password"
-                      placeholder="Enter your password"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button
-              formAction={signup}
-              className="w-full"
-              variant="default"
-              type="submit"
-            >
-              Sign-Up
-            </Button>
-          </form>
-        </FormProvider>
-        <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-slate-300 after:ml-4 after:block after:h-px after:flex-grow after:bg-slate-300">
-          or
+      <form className="space-y-6 font-sans">
+        <div>
+          <label htmlFor="name" className=" text-lg">
+            Name:
+          </label>
+          <Input
+            id="email"
+            name="name"
+            type="name"
+            required
+            placeholder="Enter your name"
+            className="mt-1 block w-full"
+          />
         </div>
-        <p className="flex gap-3 justify-center items-center">
-          Already have an account?
-          <Link className="font-bold text-xl hover:underline" href="/log-in">
+        <div>
+          <label htmlFor="email" className="block text-lg">
+            Email:
+          </label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="Enter your email"
+            className="mt-1 block w-full"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="password" className="block text-lg">
+            Password:
+          </label>
+          <Input
+            id="password"
+            name="password"
+            type="password"
+            required
+            placeholder="Enter your password"
+            className="mt-1 block w-full"
+            pattern=""
+          />
+        </div>
+
+        <div className="space-y-4">
+          {/* <Button
+            formAction={login}
+            type="submit"
+            className="w-full text-lg tracking-wider"
+          >
             Login
-          </Link>
-        </p>
-      </div>
+          </Button> */}
+
+          <Button
+            formAction={signup}
+            type="submit"
+            className="w-full text-lg tracking-wider"
+          >
+            Signup
+          </Button>
+        </div>
+      </form>
     </div>
   );
 };
 
-export default Signup;
+export default signUp;

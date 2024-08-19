@@ -1,8 +1,13 @@
 import Image from "next/image";
-import ThemeSwitch from "../theme/ThemeSwitch";
 import Link from "next/link";
+import { createClient } from "../../../utils/supabase/server";
+import NavbarClient from "./NavbarClient";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const supabase = createClient();
+
+  const { data } = await supabase.auth.getUser();
+
   return (
     <header>
       <div className="w-full backdrop-blur-md p-4 ">
@@ -17,21 +22,11 @@ const Navbar = () => {
                 className="rounded-full border-2 border-primary max-w-[70px] hidden md:block"
               />
               <span className="uppercase flex py-1 tracking-wider px-2">
-                smiliy-talk
+                smiliy-talk - {data.user?.email || ""}
               </span>
             </Link>
           </nav>
-          <div className="flex justify-center items-center gap-6">
-            <ThemeSwitch />
-            <div>
-              <Link
-                href="/login"
-                className="bg-primary tracking-wider text-lg text-primary-foreground px-6 py-2 rounded-md hover:bg-primary/90"
-              >
-                Login
-              </Link>
-            </div>
-          </div>
+          <NavbarClient userEmail={data.user?.email || ""} />
         </div>
       </div>
     </header>
