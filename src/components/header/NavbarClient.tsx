@@ -23,15 +23,13 @@ const NavbarClient = ({ userEmail }: { userEmail: string }) => {
       <ThemeSwitch />
       <div>
         {userEmail ? (
-          <form action="/">
-            <button
-              type="submit"
-              onClick={handleLogout}
-              className="bg-red-500 tracking-wider text-lg text-white px-6 py-2 rounded-md hover:bg-red-600"
-            >
-              Logout
-            </button>
-          </form>
+          <button
+            type="submit"
+            onClick={handleLogout}
+            className="bg-red-500 tracking-wider text-lg text-white px-6 py-2 rounded-md hover:bg-red-600"
+          >
+            Logout
+          </button>
         ) : (
           <Link
             href="/login"
