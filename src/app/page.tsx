@@ -1,5 +1,4 @@
 import Image from "next/image";
-import giffile from "../../public/smiliy.gif";
 
 export default function Home() {
   return (
@@ -20,7 +19,7 @@ export default function Home() {
         <div className="flex justify-center items-center p-2">
           <div title="This is a smiliy GIF created with Gif maker, a random picture collection. All pictures taken from unsplash.com, but inbetween there is my own Avatar try to find it.">
             <Image
-              src={giffile}
+              src="/image/smiliy.gif"
               alt="smiliy"
               width={500}
               height={500}
