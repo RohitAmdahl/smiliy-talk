@@ -1,6 +1,6 @@
 "use server";
 
-import { login, signup } from "@/app/login/actions";
+import { login, signup } from "@/actions";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
